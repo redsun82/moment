@@ -3,7 +3,7 @@
 // author : Tim Wood
 // license : MIT
 // momentjs.com
-(function(a) {
+((function(a) {
     function E(a, b, c, d) {
         var e = c.lang();
         return e[a].call ? e[a](c, d) : e[a][b];
@@ -219,7 +219,7 @@
             return a != null ? (this._d["set" + b + c](a), this) : this._d["get" + b + c]();
         };
     }
-    function ab(a) {
+    function ba(a) {
         b.duration.fn[a] = function() {
             return this._data[a];
         };
@@ -335,7 +335,9 @@
             for (d = 0; d < i.length; d++) b[i[d]] = f[a][i[d]];
             b.monthsParse = f[a].monthsParse, g = a;
         }
-    }, b.langData = Q, b.isMoment = function(a) {
+    }, b.langData = Q, b.langCache = function() {
+        return f;
+    }, b.isMoment = function(a) {
         return a instanceof H;
     }, b.isDuration = function(a) {
         return a instanceof I;
@@ -499,8 +501,8 @@
         },
         lang: b.fn.lang
     };
-    for (e in z) z.hasOwnProperty(e) && (bb(e, z[e]), ab(e.toLowerCase()));
+    for (e in z) z.hasOwnProperty(e) && (bb(e, z[e]), ba(e.toLowerCase()));
     bb("Weeks", 6048e5), h && (module.exports = b), typeof ender == "undefined" && (this.moment = b), typeof define == "function" && define.amd && define("moment", [], function() {
         return b;
     });
-}).call(this);
+})).call(this);

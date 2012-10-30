@@ -845,6 +845,9 @@
     // returns language data
     moment.langData = getLangDefinition;
 
+    // returns the whole language cache
+    moment.langCache = function () { return languages; }
+
     // compare moment object
     moment.isMoment = function (obj) {
         return obj instanceof Moment;
